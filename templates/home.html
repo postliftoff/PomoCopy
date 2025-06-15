@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='pomo.css')}}">
+    <title>Pomofocus</title>
+</head>
+<body>
+<div class="encompass-all">
+    <div class="main-container">
+
+        <div class="navbar">
+            <a class="logo-link" href="{{url_for('home')}}">
+            <div class="logo"> <img class="small-logos" src="{{url_for('static',filename='icon-white2.png')}}" alt="Pomofocus Logo"> <h1>Pomofocus</h1></div>
+            </a>
+                <div class="nav-buttons">
+                    <a href="/summary">
+                    <button><img class="smaller-logos" src="{{url_for('static',filename='graph-white.png')}}" alt="">Report</button>
+                    </a>
+                    <a href="{{url_for('settings')}}">
+                    <button><img class="smaller-logos" src="{{url_for('static',filename='config-white.png')}}" alt="">Setting</button>
+                    </a>
+                    <a href="{{ url_for('login') }}">
+                    <button><img class="smaller-logos" src="{{url_for('static',filename='user-white.png')}}" alt="">Sign In</button>
+                    </a>
+                    <div class="dropdown-container">
+                        <img class="nav-options-icon" id="dropdown-toggle" src="{{url_for('static',filename='threedots-white.png')}}" alt="Options">
+                        <div class="dropdown-menu" id="nav-dropdown">
+                            <ul>
+                                <li><a href="/logout" id="logout-button"><img class="smaller-logos" src="{{ url_for('static',filename='login-black.png')}}" alt="">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <hr class="section-separator">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+        <div class="timer-container">
+            <div class="modes">
+                <button class="active" data-mode="pomodoro">Pomodoro</button>
+                <button data-mode="shortBreak">Short Break</button>
+                <button data-mode="longBreak">Long Break</button>
+            </div>
+            <div class="timer-display">
+                25:00
+            </div>
+            <div class="start">
+                <button class="start-button">START</button>
+            </div>
+        </div>
+
+        <div class="pomodoro-counter">
+            #1
+        </div>
+        <div class="focus-message">
+            Time to focus!
+        </div>
+
+        <div class="tasks-container">
+            <div class="tasks-heading">
+                <h2>Tasks</h2>
+                <div class="dropdown-container-tasks">
+                            <img class="task-options-icon" id="task-dropdown-toggle" src="{{url_for('static',filename='threedots-white.png')}}" alt="Options">
+                            <div class="dropdown-menu" id="task-dropdown">
+                                <ul>
+                                    <li><a href="#" id="clear-all-tasks-button"><img class="smaller-logos" src="{{ url_for('static',filename='delete-black.png')}}" alt="">Clear all tasks</a></li>
+                                </ul>
+                            </div>
+                    </div>
+            </div>
+            <hr class="task-separator">
+            <div id="task-list"></div>
+            <button class="add-task-button"><img src="{{url_for('static',filename='plus-circle-white.png')}}" alt="Add" class="add-task-icon"> Add Task</button>
+        </div>
+
+    </div>
+</div>
+<div class="encompass-low">
+    <div class="aitzaz-work">
+           <div style="text-align: center;">
+           <h1>An online Pomodoro Timer to boost your productivity</h1>
+           </div>
+           <h2>What is Pomofocus?</h2>
+           <h4>Pomofocus is a customizable pomodoro timer that works on desktop & mobile browser. The aim of this app is to help you focus on any task you are working on, such as study, writing, or coding. This app is inspired by <strong><a class="a1"
+                   href="https://www.pomodorotechnique.com/">Pomodoro Technique</a></strong> which is a time management method developed by Francesco Cirillo.
+        </h4>
+        <h2>What is Pomodoro Technique?</h2>
+        <h4>The Pomodoro Technique is created by Francesco Cirillo for a more productive way to work and study. The technique uses a timer to break down work into intervals, traditionally 25 minutes in length, separated by short breaks. Each interval is known as a pomodoro, from the Italian word for 'tomato', after the tomato-shaped kitchen timer that Cirillo used as a university student. -<strong><a class="a1" href="https://en.wikipedia.org/wiki/Pomodoro_Technique"> Wikipedia</a></strong>
+           </h4>
+           <h2>How to use the Pomodoro Timer?</h2>
+           <ol>
+          <li><strong>Add tasks</strong> to work on today</li>
+        <li> <strong>Set estimate pomodoros</strong> (1 = 25min of work) for each tasks </li>
+        <li><strong>Select a task</strong> to work on</li>
+        <li><strong>Start timer</strong> and focus on the task for 25 minutes</li>
+        <li><strong>Take a break</strong> for 5 minutes when the alarm ring</li>
+        <li><strong>Iterate</strong> 3-5 until you finish the tasks</li>
+        </ol>
+          <h2>Basic Features</h2>
+
+           <li> <strong> Estimate Finish Time:</strong> "Get an estimate of the time required to complete your daily tasks"</li>
+           <li><strong>Add Templates:</strong> Save your repetitive tasks as templates and add them with just one click.</li>
+           <li><strong>Visual Reports:</strong> See how much time you've focused each day, week, and month.</li>
+           <li><strong>Custom Settings:</strong> Personalize your focus/break time, alarm sounds, background sounds, and more.</li>
+          <h2>Premium Features</h2>
+          <li><strong> Add Projects:</strong>Track how much time you spend on each project.</li>
+           <li><strong> Yearly Reports: </strong> View your focus hours for each year.</li>
+           <li><strong>Download Reports:</strong> Download your focus history in CSV format.</li>
+           <li><strong>No Template Limit: </strong>Save more than 3 templates.</li>
+           <li><strong> Todoist Integration:</strong> Load tasks from your Todoist account</li>
+           <li><strong>Webhook Integration:</strong> Connect to other apps (Zapier, IFTTT, etc).</li>
+           <li><strong>No Ads:</strong> Enjoy a clean and distraction-free app experience.</li>
+         <h2>Download App</h2>
+         <li>
+                <strong>For MAC:</strong>
+                <a class="a1" href=https://focuslab.lon1.cdn.digitaloceanspaces.com/pomofocus-app-files/pomofocus-1.1.0-mac.dmg download>pomofocus-1.1.0-mac.dmg</a>
+            </li>
+            <li>
+                <strong>For Windows:</strong>
+                <a class="a1" href="https://focuslab.lon1.cdn.digitaloceanspaces.com/pomofocus-app-files/pomofocus-1.1.0-win-x64.zip" download>pomofocus-1.1.0-win-x64.zip</a>
+            </li>
+            <li>
+                <strong>For Linux:</strong>
+                <a class="a1" href="https://focuslab.lon1.cdn.digitaloceanspaces.com/pomofocus-app-files/pomofocus-1.1.0-lin-amd64.zip" download>pomofocus-1.1.0-lin-amd64.zip
+</a>
+            </li>
+        <p><strong>Important:</strong> For Windows, you may see a warning message about the app being unsafe. This is because the app is not signed with a developer certificate. For Windows, you can proceed by clicking "Details" and then "Run anyway".</p>
+        <footer>
+           <div class="footer-styling" style="text-align: center;">
+             <a href="{{ url_for('home') }}">HOME</a>
+             <a href="/privacy">PRIVACY</a>
+             <a href="/terms">TERMS</a>
+             <a href="/commerce">COMMERCE</a>
+             <a href="/contact">CONTACT</a>
+             <a href="/simple">SIMPLE PAGE</a>
+           </div>
+           <div style="text-align: center;">
+              <a href="https://www.facebook.com/pomofocus">
+              <img src="{{ url_for('static',filename='facebook.png')}}" alt="facebook">
+           </a>
+           <a href="https://twitter.com/pomofocus">
+              <img src="{{ url_for('static',filename='twitter.png')}}" alt="twitter">
+           </a>
+           <a href="https://climate.stripe.com/kfwPBZ">
+              <img src="{{ url_for('static',filename='stripe-climate-badge.png')}}" alt="pic3">
+           </a>
+           <h3>Made with <3 by Faique, Ahsan, Aitazaz and Shehzil</h3>
+           <h3>© Pomofocus 2024. All Rights Reserved.</h3>
+        </div>
+        </footer>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script> </body>
+</html>

@@ -1,0 +1,583 @@
+@font-face {
+  font-family: 'ArialRounded';
+  font-display: swap;
+  src: url('/static/Arial_Rounded_MT.ttf')
+    format('truetype');
+}
+@font-face {
+  font-family: 'ArialRounded';
+  font-display: swap;
+  src: url('/static/Arial-Rounded-MT-Bold.ttf')
+    format('truetype');
+  font-weight: bold;
+}
+
+body{
+    background-color: rgb(186, 73, 73);
+     font-family: 'ArialRounded', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    margin: 0;
+    border: 0;
+    padding: 0;
+    transition: background-color 0.5s ease;
+    min-height: 100vh;
+}
+
+.encompass-all{
+    width: 100%;
+    max-width: unset;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+body button{
+    font-family: 'ArialRounded', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+.main-container{
+    background-color: transparent;
+    max-width: 800px;
+    width: 100%;
+    padding-top: 10px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* WHOLE NAVBAR */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 1.1em;
+    width: 100%;
+    max-width: 640px;
+    padding: 0;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+.navbar .logo-link{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar .dropdown-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo{
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar .logo h1{
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.small-logos{
+    width: 21px;
+    height: 21px;
+    margin-right: 4px;
+    cursor: pointer;
+    border: none;
+}
+
+.smaller-logos{
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    padding: 1px;
+    margin-right: 5px;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.nav-buttons button{
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 0.7em;
+    transition: background-color 0.3s ease, color 0.5s ease;
+    display: flex;
+    align-items: center;
+}
+
+.nav-buttons a{
+    text-decoration: none;
+}
+
+.nav-buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-options-icon {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 8px;
+    margin-left: 10px;
+    border-radius: 4px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.nav-options-icon:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 10px 0 30px;
+    max-width: 640px;
+}
+
+/* WHOLE TIMER DISPLAY */
+
+.timer-container{
+    padding: 15px 0 30px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 490px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.5s ease;
+}
+
+.modes{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.modes button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    opacity: 0.7;
+    border-radius: 4px;
+}
+
+.modes button:hover{
+    opacity: 1;
+}
+
+.modes button:active {
+    background-color: rgba(0, 0, 0, 0.15);
+    opacity: 1;
+    font-weight: bold;
+}
+
+.modes button.active {
+    background-color: rgba(0, 0, 0, 0.15);
+    opacity: 1;
+    font-weight: bold;
+}
+
+.timer-display{
+    font-size: 120px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.start-button{
+    border: none;
+    padding: 15px 60px;
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.start-button:hover{
+    background-color: #f0f0f0;
+}
+
+.pomodoro-counter {
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 15px;
+    font-size: 0.8em;
+    font-weight: normal;
+    text-align: center;
+    transition: color 0.5s ease;
+}
+
+.focus-message {
+    color: rgba(255, 255, 255);
+    margin-top: 5px;
+    font-size: 1.2em;
+    font-weight: normal;
+    text-align: center;
+    transition: color 0.5s ease;
+}
+
+/* ALL ELEMENTS PART OF TASKS STYLING */
+
+.tasks-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 0;
+    color: white;
+    text-align: left;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.tasks-heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tasks-container h2 {
+    color: white;
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.tasks-container .task-options-icon {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 8px;
+    border-radius: 4px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, filter 0.5s ease;
+}
+
+.tasks-container .task-options-icon:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-container-tasks {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.dropdown-container-tasks .dropdown-menu {
+    top: 100%;
+    right: 0;
+}
+
+.task-separator {
+    border-color: rgb(255, 255, 255);
+    margin: 0 0 20px;
+    transition: border-color 0.5s ease;
+}
+
+.add-task-button {
+    background-color: rgb(0, 0, 0, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+    border: 2px dashed rgba(255, 255, 255, 0.4);
+    padding: 20px 25px;
+    margin-bottom: 110px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.5s ease;
+}
+
+.add-task-button .add-task-icon {
+    opacity: 0.5;
+    width: 16px;
+    height: 16px;
+}
+
+.add-task-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.task-item {
+    background-color: rgba(255, 255, 255);
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(0,0,0,0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-item:last-child {
+    margin-bottom: 0;
+}
+
+.task-left {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.task-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(0,0,0,0.8);
+    border-radius: 50%;
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+}
+
+.task-text-input {
+    background: transparent;
+    border: none;
+    color: rgba(0,0,0,0.8);
+    font-size: 1.1em;
+    padding: 5px 0;
+    width: 100%;
+    outline: none;
+}
+
+.task-text-input::placeholder {
+    color: rgba(0,0,0,0.6);
+}
+
+
+.flashes{ /* For the login notifs */
+    color: white;
+}
+
+/* FOR DROPDOWN MENU (THREE DOTS NEXT TO NAVBAR) */
+
+.dropdown-container {
+    position: relative; /* Essential for positioning the dropdown menu relative to this container */
+    display: inline-block; /* Allows side-by-side with other nav buttons */
+    margin-left: 10px; /* Space from Sign In button */
+}
+
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position below the icon */
+    right: 0; /* Align to the right of the icon */
+    background-color: #fff; /* White background for the menu */
+    min-width: 120px; /* Minimum width for the menu */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Soft shadow */
+    z-index: 1; /* Ensure it appears above other content */
+    border-radius: 4px; /* Rounded corners */
+    overflow: hidden; /* Ensures content stays within rounded corners */
+}
+
+.dropdown-menu ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu ul li a {
+    color: #333; /* Dark text color for links */
+    padding: 12px 16px;
+    text-decoration: none; /* Remove underline */
+    display: block; /* Make the whole area clickable */
+    text-align: left; /* Align text to the left */
+    font-size: 0.9em;
+    white-space: nowrap; /* Prevent text from wrapping */
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-menu ul li a:hover {
+    background-color: #f1f1f1; /* Light grey on hover */
+}
+
+/* Class to show the dropdown (added/removed by JS) */
+.dropdown-menu.show {
+    display: block;
+}
+
+/* AITZAZ CSS */
+.encompass-low{
+    background-color: #fff;
+    width: 100%;
+    max-width: unset;
+}
+
+.aitzaz-work{
+    background-color: #fff;
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.6;
+    color: #333;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.aitzaz-work h1, h2, h3, h4, p, li, ol, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.aitzaz-work h1 {
+    font-size: 34px;
+    color: hsl(357, 50%, 22%); /* Dark red */
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.aitzaz-work h2 {
+    font-size: 1.5em;
+    color: hsl(357, 50%, 22%);
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.aitzaz-work h2:after {
+    content: '';
+    display: block;
+    width: 24px;
+    padding-top: 8px;
+    border-bottom: 4px solid #f05b56;
+    opacity: 0.6;
+}
+
+.aitzaz-work h4 {
+    color: hsl(357, 12%, 42%);
+    font-weight: normal;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.aitzaz-work p {
+    color: hsl(357, 12%, 42%);
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.aitzaz-work ol {
+    margin-left: 20px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.aitzaz-work li {
+    color: hsl(357, 12%, 42%);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.aitzaz-work li::marker {
+    color: rgba(255, 0, 0, 0.7); /* Red colored bullets */
+}
+
+.aitzaz-work .a1 {
+    text-decoration: none !important;
+    font-weight: bold;
+    color: hsl(2, 66%, 58%);
+}
+
+/* Footer Styling */
+.aitzaz-work footer {
+    background-color: #ffffff;
+    padding: 20px 10px 10px 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #444;
+    border-top: 1px solid #ddd;
+    margin-top: 50px;
+}
+
+.aitzaz-work footer a {
+    margin: 0 4px;
+    color: hsl(357, 12%, 42%);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.aitzaz-work footer a:hover {
+    text-decoration: none;
+}
+
+.aitzaz-work footer img {
+    background-color: #999;
+    width: 28px;
+    height: 28px;
+    border-radius: 100px;
+    padding: 6px;
+    margin: 0 6px;
+}
+
+.aitzaz-work footer h3 {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: normal;
+    color: #444;
+}
+
+.footer-styling{
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.alt-body{
+    background-color: white;
+}

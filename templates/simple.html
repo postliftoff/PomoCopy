@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='pomo.css')}}">
+    <title>Pomofocus</title>
+</head>
+<body>
+<div class="encompass-all">
+    <div class="main-container">
+
+        <div class="navbar">
+            <a class="logo-link" href="{{url_for('home')}}">
+            <div class="logo"> <img class="small-logos" src="{{url_for('static',filename='icon-white2.png')}}" alt="Pomofocus Logo"> <h1>Pomofocus</h1></div>
+            </a>
+                <div class="nav-buttons">
+                    <a>
+                    <button><img class="smaller-logos" src="{{url_for('static',filename='graph-white.png')}}" alt="">Report</button>
+                    </a>
+                    <a href="{{url_for('settings')}}">
+                    <button><img class="smaller-logos" src="{{url_for('static',filename='config-white.png')}}" alt="">Setting</button>
+                    </a>
+                    <a href="{{ url_for('login') }}">
+                    <button><img class="smaller-logos" src="{{url_for('static',filename='user-white.png')}}" alt="">Sign In</button>
+                    </a>
+                    <div class="dropdown-container">
+                        <img class="nav-options-icon" id="dropdown-toggle" src="{{url_for('static',filename='threedots-white.png')}}" alt="Options">
+                        <div class="dropdown-menu" id="nav-dropdown">
+                            <ul>
+                                <li><a href="/logout" id="logout-button"><img class="smaller-logos" src="{{ url_for('static',filename='login-black.png')}}" alt="">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <hr class="section-separator">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+        <div class="timer-container">
+            <div class="modes">
+                <button class="active" data-mode="pomodoro">Pomodoro</button>
+                <button data-mode="shortBreak">Short Break</button>
+                <button data-mode="longBreak">Long Break</button>
+            </div>
+            <div class="timer-display">
+                25:00
+            </div>
+            <div class="start">
+                <button class="start-button">START</button>
+            </div>
+        </div>
+
+        <div class="pomodoro-counter">
+            #1
+        </div>
+        <div class="focus-message">
+            Time to focus!
+        </div>
+
+        <div class="tasks-container">
+            <div class="tasks-heading">
+                <h2>Tasks</h2>
+                <div class="dropdown-container-tasks">
+                            <img class="task-options-icon" id="task-dropdown-toggle" src="{{url_for('static',filename='threedots-white.png')}}" alt="Options">
+                            <div class="dropdown-menu" id="task-dropdown">
+                                <ul>
+                                    <li><a href="#" id="clear-all-tasks-button"><img class="smaller-logos" src="{{ url_for('static',filename='delete-black.png')}}" alt="">Clear all tasks</a></li>
+                                </ul>
+                            </div>
+                    </div>
+            </div>
+            <hr class="task-separator">
+            <div id="task-list"></div>
+            <button class="add-task-button"><img src="{{url_for('static',filename='plus-circle-white.png')}}" alt="Add" class="add-task-icon"> Add Task</button>
+        </div>
+
+    </div>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script> </body>
+</html>

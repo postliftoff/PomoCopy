@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      margin: 40px;
+      color: #333;
+    }
+    pre{
+        font-size: 20px;
+    }
+
+    .tabs {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      border: 1px solid #f2f2f2;
+      color: #888;
+    }
+    a{
+      color: #000;
+    }
+
+    .tab.active {
+      background-color: #f4c7c3;
+      color: #000;
+      font-weight: bold;
+    }
+    .one{
+        width: 100%;
+        max-width: 90px;
+        max-height: 90px;
+        border-radius: 600px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <div class="tab"><a href="/summary">Summary</a></div>
+        <div class="tab"><a href="/details">Detail</a></div>
+        <div class="tab active"><a href="/ranking">Ranking</a></div>
+      </div>
+      <b>Focus Time This Week</b><hr>
+      <pre><h1>USER                                                    TIME(HH:MM)</h1></pre>
+      <pre><h2>1. <img class="one" src="{{ url_for('static',filename="fta.jpg") }}" alt="too xtylish"> Faique Taj Alam                                                      108:00</h2></pre>
+      <pre><h2>2. <img class="one" src="{{ url_for('static',filename="ahs.jpg") }}" alt="mogger bhai"> Ahsan Tariq                                                          107:40</h2></pre>
+      <pre><h2>3. <img class="one" src="{{ url_for('static',filename="ait.jpg") }}" alt="handsome boy"> Aitzaz Khan                                                          100:00</h2></pre>
+      <pre><h2>4. <img class="one" src="{{ url_for('static',filename="shh.jpg") }}" alt="..."> Shehzil Syed                                                         100:00</h2></pre>
+
+
+
+
+</body>
+</html>

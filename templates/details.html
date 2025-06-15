@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      margin: 40px;
+      color: #333;
+    }
+
+    .tabs {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      border: 1px solid #f2f2f2;
+      color: #888;
+    }
+    a{
+      color: #000;
+    }
+
+    .tab.active {
+      background-color: #f4c7c3;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .container {
+      border: 1px solid #f2f2f2;
+      padding: 20px;
+    }
+
+    h3 {
+      margin-top: 0;
+      font-weight: normal;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+    }
+ 
+   .pagination {
+      text-align: center;
+    } 
+    .note {
+      font-size: 12px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tabs">
+    <div class="tab"><a href="/summary">Summary</a></div>
+    <div class="tab active"><a href="/details">Detail</a></div>
+    <div class="tab"><a href="/ranking">Ranking</a></div>
+  </div>
+
+  <div class="container">
+    <h3>Focus Time Detail</h3>
+    <p class="note">* This report will be available when you are logged in</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>DATE</th>
+          <th>PROJECT / TASK</th>
+          <th>MINUTES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Empty row (no data shown) -->
+      </tbody>
+    </table>
+
+    <div class="pagination">
+      1
+      <button>&#9654;</button> <!-- Right arrow -->
+    </div>
+  </div>
+
+</body>
+</html>

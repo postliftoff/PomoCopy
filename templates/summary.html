@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      margin: 40px;
+      color: #333;
+    }
+
+    .tabs {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      border: 1px solid #f2f2f2;
+      color: #888;
+      cursor: pointer;
+    }
+    a{
+      color: #000;
+    }
+
+    .tab.active {
+      background-color: #f4c7c3;
+      color: #000;
+      font-weight: bold;
+    }
+    .note {
+      font-size: 12px;
+      color: #888;
+    }
+    .focused{
+        font-size:25px;
+        color: rgb(213, 117, 114);
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    }
+
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <div class="tab active"><a href="/summary">Summary</a></div>
+        <div class="tab"><a href="/details">Detail</a></div>
+        <div class="tab"><a href="/ranking">Ranking</a></div>
+    </div>
+    <b>Activity Summary</b>
+    <hr>
+    <p class="note">* This report will be available when you are logged in</p>
+    <pre class="focused"><img src="https://pomofocus.io/icons/clock-red.png" height="20"> Hours focused: _ _</pre>
+    <pre class="focused"><img src="https://pomofocus.io/icons/calender-red.png" height="20"> Days accessed: _ _</pre>
+    <pre class="focused"><img src="https://pomofocus.io/icons/flame-red.png" height="20"> Day streak: _ _</pre>
+    <h3>Focus Hours</h3>
+    <hr>
+    <div class="tabs">
+        <div class="tab">Week</div>
+        <div class="tab active">Month</div>
+        <div class="tab">Year <img src="https://pomofocus.io/icons/lock-black.png"height="12"></div>
+    </div>
+    <p class="note">* This report will be available when you are logged in</p>
+    <pre><h2>PROJECT                  TIME(HH:MM)</h2></pre>
+    <hr>
+    <pre><h2>Total                     00:00</h2></pre>
+    <hr>
+
+
+
+
+
+
+
+
+</body> 
+</html>

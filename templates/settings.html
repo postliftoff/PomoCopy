@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename="settings.css") }}">
+    <title>Setting</title>
+</head>
+<body>
+    <header><b>SETTINGS</b>
+        <BR>
+    <hr></header>
+    <pre><img src="https://pomofocus.io/icons/clock-black.png" height="18"> TIMER</pre>
+    <h3>Time (minutes):</h3>  
+    <pre>Pomodoro:        Short Break:        Long Break:</pre>
+   <pre><input type="number" placeholder="25"> <input type="number" placeholder="5">  <input type="number"placeholder="15"></pre>
+    <pre>          Auto Start Breaks:                                  <input type="checkbox"> </pre>
+    <pre>          Auto Start Pomodoros:                         <input type="checkbox"> </pre>
+    <pre> Long Break Interval:                                     <input type="number" placeholder="4" style="height: 30px; width: 55px;"> </pre>
+   <hr>
+    <pre><img src="https://pomofocus.io/icons/check-black.png" height="18"> TASK</pre>
+    <pre>          Auto Check Tasks:                               <input type="checkbox"> </pre>
+    <pre>          Auto Switch Tasks:                               <input type="checkbox"> </pre>
+    <hr>
+    <pre><img src="https://pomofocus.io/icons/sound-black2.png" height="18"> SOUND</pre>
+    <pre>        Alarm Sound:                                             By Default</pre>
+    <pre>                                                                 <input type="range"> </pre>
+    <pre>                                                     repeat           <input type="number" placeholder="4" style="height: 30px;
+    width: 50px;"> </pre>
+    <hr>
+    <pre><img src="https://pomofocus.io/icons/theme-black.png" height="18"> THEME</pre>
+    <pre>      Color Themes:                                               <input type="color" style="width: 20px;height: 30px;"> </pre>
+    <pre>                Dark Mode when running:                   <input type="checkbox"> </pre>
+    <hr>
+    <pre><img src="https://pomofocus.io/icons/notification-black.png" height="18"> NOTIFICATION</pre>
+    <pre>   Remainder:                                           <input type="number" placeholder="5" style="height: 30px;width: 50px;">min </pre>
+    <hr>
+    <pre><img src="https://pomofocus.io/icons/integration-black.png" height="18"> INTEGRATION</pre>
+    <pre>        Todoist:                                           <button>Connect</button></pre>
+    <pre>         Webhook:                                        <button>Add</button> </pre>
+<BR>
+    <a href="{{ url_for('home') }}"><button>Done</button></a>
+</body>
+</html>
